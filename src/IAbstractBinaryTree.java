@@ -34,4 +34,6 @@ public interface IAbstractBinaryTree<T> {
     List<IAbstractBinaryTree<T>> depthFirstSearch();
 
     List<IAbstractBinaryTree<T>> breadthFirstSearch();
+
+    IAbstractBinaryTree<T> copy();
 }

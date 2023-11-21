@@ -13,6 +13,26 @@ public class BinaryTree<T> implements IAbstractBinaryTree<T> {
         this.right = null;
     }
 
+
+    //1
+    public IAbstractBinaryTree<T> copy() {
+        // Создаем новый узел с тем же значением
+        BinaryTree<T> copy = new BinaryTree<>(this.getKey());
+
+
+        if (this.getLeft() != null) {
+            copy.setLeft(((BinaryTree<T>) this.getLeft()).copy());
+        }
+
+        if (this.getRight() != null) {
+            copy.setRight(((BinaryTree<T>) this.getRight()).copy());
+        }
+
+        return copy;
+    }
+    //1
+
+
     @Override
     public T getKey() {
         return key;
@@ -48,7 +68,7 @@ public class BinaryTree<T> implements IAbstractBinaryTree<T> {
         StringBuilder result = new StringBuilder(" ".repeat(indent * 2));
 
         if (indent > 0) {
-            result.append(isRight ? "└─ " : "├─ ");
+            result.append(isRight ? "└─ " : "┌── ");
         }
 
         result.append(key.toString()).append(System.lineSeparator());

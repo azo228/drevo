@@ -7,6 +7,15 @@ public class Main {
         tree.printTreeRecursive(tree, 0, "───");
         System.out.println("\n\n\n\n");
 
+
+        //1
+        System.out.println("Создаем копию дерева:");
+        IAbstractBinaryTree<Integer> copiedTree = tree.copy();
+        copiedTree.printTreeRecursive(copiedTree, 0, "───");
+        //1
+
+
+
         System.out.println("Level-order traversal:");
         Queue<IAbstractBinaryTree<Integer>> levelOrderList = tree.levelOrder();
         for (var node : levelOrderList) {
@@ -71,35 +80,13 @@ public class Main {
         tree.getLeft().getRight().setLeft((IAbstractBinaryTree<Integer>) new BinaryTree<>(4));
         tree.getLeft().getRight().setRight((IAbstractBinaryTree<Integer>) new BinaryTree<>(7));
 
-        tree.getRight().getLeft().setLeft((IAbstractBinaryTree<Integer>) new BinaryTree<>(7));
+        tree.getRight().getLeft().setLeft((IAbstractBinaryTree<Integer>) new BinaryTree<>(3));
         tree.getRight().getLeft().setRight((IAbstractBinaryTree<Integer>) new BinaryTree<>(10));
 
-        tree.getRight().getRight().setLeft((IAbstractBinaryTree<Integer>) new BinaryTree<>(9));
+        tree.getRight().getRight().setLeft((IAbstractBinaryTree<Integer>) new BinaryTree<>(4));
         tree.getRight().getRight().setRight((IAbstractBinaryTree<Integer>) new BinaryTree<>(12));
 
-        tree.getLeft().getLeft().getLeft().setLeft(new BinaryTree<>(1));
-        tree.getLeft().getLeft().getLeft().setRight(new BinaryTree<>(2));
 
-        tree.getLeft().getLeft().getRight().setLeft(new BinaryTree<>(3));
-        tree.getLeft().getLeft().getRight().setRight(new BinaryTree<>(4));
-
-        tree.getLeft().getRight().getLeft().setLeft(new BinaryTree<>(5));
-        tree.getLeft().getRight().getLeft().setRight(new BinaryTree<>(6));
-
-        tree.getLeft().getRight().getRight().setLeft(new BinaryTree<>(7));
-        tree.getLeft().getRight().getRight().setRight(new BinaryTree<>(8));
-
-        tree.getRight().getLeft().getLeft().setLeft(new BinaryTree<>(9));
-        tree.getRight().getLeft().getLeft().setRight(new BinaryTree<>(10));
-
-        tree.getRight().getLeft().getRight().setLeft(new BinaryTree<>(11));
-        tree.getRight().getLeft().getRight().setRight(new BinaryTree<>(12));
-
-        tree.getRight().getRight().getLeft().setLeft(new BinaryTree<>(13));
-        tree.getRight().getRight().getLeft().setRight(new BinaryTree<>(14));
-
-        tree.getRight().getRight().getRight().setLeft(new BinaryTree<>(15));
-        tree.getRight().getRight().getRight().setRight(new BinaryTree<>(16));
         return tree;
     }
 }
